@@ -11,6 +11,7 @@ class Carousel extends Component {
         }
     }
 
+    // fn to move to prev slide
     showPrevSlide = () => {
         console.log('prev clicked!', this.state.active);
         this.setState({
@@ -18,6 +19,7 @@ class Carousel extends Component {
         })
     }
 
+    // fn to move to next slide
     showNextSlide = () => {
         console.log('next clicked!', this.state.active);
         this.setState({

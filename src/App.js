@@ -3,6 +3,7 @@ import Header from './components/Header'
 import Carousel from './containers/Carousel'
 import CarouselAPI from './api/CarouselAPI'
 
+//Class based component
 class App extends Component{
 
     constructor(props) {
@@ -12,6 +13,7 @@ class App extends Component{
         };
     }
 
+    // Images are loaded while the component is created
     componentWillMount() {
         CarouselAPI.getPixabayData()
         .then((data) => {
