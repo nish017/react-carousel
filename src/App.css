@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css?family=Ropa+Sans');
+
+html, body {
+    font-family: 'Ropa Sans', sans-serif !important;
+}
+
+.carousel-header, .carousel-footer {
+    background-color: #eaeee7;
+    color: #276696;
+    margin: 0.8em 0;
+    padding: 0.4em 2em;
+}
+
+.carousel-header h1 {
+    font-size: 4rem;
+    font-weight: 600;
+    letter-spacing: .15rem;
+}
+
+.carousel-footer .btn {
+    background-color: #276696;
+    color: white;
+    font-size: 1.5rem;
+    line-height: 1.2em;
+    margin: 1.5em 0.15em;
+    padding: 0.3em 1.2em;
+}
+
+.carousel-footer .btn:hover {
+    color: white;
+}
+
+.carousel-footer .btn:focus {
+    box-shadow: none;
+}
+
+.carousel-footer .btn:active {
+    background-color: rgba(39, 102, 150, 0.5);
+}
+
+.carousel-footer .btn.prev {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.carousel-footer .btn.next {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.carousel {
+    padding: 1em;
+}
+
+.carousel .carousel-inner {
+    display: flex;
+}
+
+.carousel .carousel-inner .carousel-slide {
+    padding: 0 1em;
+}
