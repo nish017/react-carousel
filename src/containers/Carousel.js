@@ -1,25 +1,18 @@
 import React, { Component } from 'react'
+import Slide from '../components/Slide'
 
 //class based react component
 class Carousel extends Component {
+    constructor(props) {
+        super(props)
+    }
 
     render() {
         return (
             <div>
                 <div className="carousel">
                     <div className="carousel-inner">
-                        <div className="carousel-slide">
-                            <div>
-                                <img src="https://cdn.pixabay.com/user/2018/01/12/08-06-25-409_250x250.jpg" />
-                            </div>
-                            <h4>Image Title</h4>
-                        </div>
-                        <div className="carousel-slide">
-                            <div>
-                                <img src="https://cdn.pixabay.com/user/2018/01/12/08-06-25-409_250x250.jpg" />
-                            </div>
-                            <h4>Image Title</h4>
-                        </div>  
+                        {this.props.data.map((slideData) => <Slide key={slideData.id} data={slideData} />)}
                     </div>
                 </div>
                 <div className="carousel-footer">
