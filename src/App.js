@@ -1,5 +1,4 @@
 import React, { Component} from "react"
-import "./App.css"
 import Header from './components/Header'
 import Carousel from './containers/Carousel'
 import CarouselAPI from './api/CarouselAPI'
@@ -9,7 +8,7 @@ class App extends Component{
     constructor(props) {
         super(props);
         this.state = {
-            carouselData : [],
+            carouselData : []
         };
     }
 

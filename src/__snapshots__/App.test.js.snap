@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Carousel /> renders correctly 1`] = `
+<div>
+  <div
+    className="carousel"
+  >
+    <div
+      className="carousel-inner"
+    />
+    <img
+      className="arrow-prev disabled-arrow"
+      onClick={null}
+      src="test-file-stub"
+    />
+    <img
+      className="arrow-next "
+      onClick={[Function]}
+      src="test-file-stub"
+    />
+  </div>
+  <div
+    className="carousel-footer d-none d-md-block"
+  >
+    <div
+      className="row justify-content-center footer"
+    >
+      <button
+        className="btn prev"
+        disabled="disabled"
+        onClick={[Function]}
+      >
+        Prev
+      </button>
+      <button
+        className="btn next"
+        disabled=""
+        onClick={[Function]}
+      >
+        Next
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Header /> renders correctly 1`] = `
+<div
+  className="carousel-header"
+>
+  <h1>
+    Carousel Test
+  </h1>
+</div>
+`;
+
+exports[`<Slide /> renders correctly 1`] = `
+<div
+  className="carousel-slide col-12 col-md-4 col-lg-2 active"
+  style={
+    Object {
+      "transform": "translateX(-NaN%) scale(1.1)",
+    }
+  }
+>
+  <div>
+    <img />
+  </div>
+  <h4
+    className="mt-2"
+  >
+    a
+  </h4>
+</div>
+`;
+
+exports[`renders correctly 1`] = `
+<div
+  className="carousel-slide col-12 col-md-4 col-lg-2 active"
+  style={
+    Object {
+      "transform": "translateX(-NaN%) scale(1.1)",
+    }
+  }
+>
+  <div>
+    <img />
+  </div>
+  <h4
+    className="mt-2"
+  >
+    a
+  </h4>
+</div>
+`;
