@@ -126,8 +126,8 @@ html, body {
         padding: 0;
     }
     .carousel .carousel-inner .carousel-slide img {
-        max-width: 100%;
-        max-height: 100%;
+        max-width: 23em;
+        max-height: 16em;
     }
     .carousel .carousel-inner .carousel-slide h4 {
         text-align: left;
