@@ -32,12 +32,14 @@ test('<Carousel /> renders correctly', () => {
 
 test('<Carousel /> component: showPrevSlide fn', () => {
     const carouselInstance = renderer.create(<Carousel />).getInstance();
-    carouselInstance.showPrevSlide()
+    const e = { stopPropagation: jest.fn() };
+    carouselInstance.showPrevSlide(e)
     expect(carouselInstance.state.active).toBe(-1)
 });
 
 test('<Carousel /> component: showNextSlide fn', () => {
     const carouselInstance = renderer.create(<Carousel />).getInstance();
-    carouselInstance.showNextSlide()
+    const e = { stopPropagation: jest.fn() };
+    carouselInstance.showNextSlide(e)
     expect(carouselInstance.state.active).toBe(1)
 });

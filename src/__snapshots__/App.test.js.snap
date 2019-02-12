@@ -8,16 +8,24 @@ exports[`<Carousel /> renders correctly 1`] = `
     <div
       className="carousel-inner"
     />
-    <img
-      className="arrow-prev disabled-arrow"
+    <span
+      className="arrow-prev-bg d-md-none disabled-arrow"
       onClick={null}
-      src="test-file-stub"
-    />
-    <img
-      className="arrow-next "
+    >
+      <img
+        className="arrow-prev"
+        src="test-file-stub"
+      />
+    </span>
+    <span
+      className="arrow-next-bg d-md-none "
       onClick={[Function]}
-      src="test-file-stub"
-    />
+    >
+      <img
+        className="arrow-next"
+        src="test-file-stub"
+      />
+    </span>
   </div>
   <div
     className="carousel-footer d-none d-md-block"
@@ -59,33 +67,18 @@ exports[`<Slide /> renders correctly 1`] = `
   className="carousel-slide col-12 col-md-4 col-lg-2 active"
   style={
     Object {
-      "transform": "translateX(-NaN%) scale(1.1)",
+      "transform": "translateX(-NaN%) scaleY(1.2)",
     }
   }
 >
-  <div>
-    <img />
-  </div>
-  <h4
-    className="mt-2"
+  <span
+    className="img-number d-none d-md-block"
   >
-    a
-  </h4>
-</div>
-`;
-
-exports[`renders correctly 1`] = `
-<div
-  className="carousel-slide col-12 col-md-4 col-lg-2 active"
-  style={
-    Object {
-      "transform": "translateX(-NaN%) scale(1.1)",
-    }
-  }
->
-  <div>
-    <img />
-  </div>
+    NaN
+  </span>
+  <img
+    className="img-fluid"
+  />
   <h4
     className="mt-2"
   >

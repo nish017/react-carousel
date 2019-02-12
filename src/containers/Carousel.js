@@ -12,19 +12,21 @@ class Carousel extends Component {
     }
 
     // fn to move to prev slide
-    showPrevSlide = () => {
+    showPrevSlide = (e) => {
         console.log('prev clicked!', this.state.active);
         this.setState({
             active: this.state.active - 1
         })
+        e.stopPropagation();
     }
 
     // fn to move to next slide
-    showNextSlide = () => {
+    showNextSlide = (e) => {
         console.log('next clicked!', this.state.active);
         this.setState({
             active: this.state.active + 1
         })
+        e.stopPropagation();
     }
 
     render() {
@@ -38,13 +40,18 @@ class Carousel extends Component {
                                                                 index={index}
                                                                 active={this.state.active} />)}
                     </div> 
-                    <img className={`arrow-prev ${this.state.active <= 0 ? 'disabled-arrow' : ''}`} 
-                        src={Arrow}
-                        onClick={this.state.active <= 0 ? null : this.showPrevSlide} />  
-                    <img className={`arrow-next ${this.state.active >= (this.props.data &&this.props.data.length - 1) ? 
-                        'disabled-arrow' : ''}`} 
-                        src={Arrow}
-                        onClick={this.state.active >= (this.props.data && this.props.data.length - 1) ? null : this.showNextSlide} />                 
+                    <span className={`arrow-prev-bg d-md-none ${this.state.active <= 0 ? 'disabled-arrow' : ''}`}
+                          onClick={this.state.active <= 0 ? null : this.showPrevSlide}>
+                        <img className={`arrow-prev`} 
+                            src={Arrow}/> 
+                    </span>
+                    <span onClick={this.state.active >= (this.props.data && this.props.data.length - 1) ? null : 
+                        this.showNextSlide}
+                    className={`arrow-next-bg d-md-none ${this.state.active >= (this.props.data &&this.props.data.length - 1) ? 
+                            'disabled-arrow' : ''}`}>
+                        <img className="arrow-next"
+                            src={Arrow} />
+                    </span> 
                 </div>
                 <div className="carousel-footer d-none d-md-block">
                     <div className="row justify-content-center footer">
@@ -54,7 +61,6 @@ class Carousel extends Component {
                                 className="btn next" onClick={this.showNextSlide}>Next</button>
                     </div>
                 </div>
-                
             </div>
         )
     }

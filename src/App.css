@@ -59,20 +59,24 @@ html, body {
 .carousel .carousel-inner .carousel-slide {
     padding: 2em 1em 0.5em;
     margin: 2em 0;
-    text-align: center;
-    transition: transform 1s, box-shadow 0.5s;
+    transition: transform 1s, box-shadow 0.5s, opacity 1s;
     position: relative;
     text-transform: capitalize;
+    opacity: 0.5;
 }
 
 .carousel .carousel-inner .carousel-slide.active {
-    box-shadow: 0 0 16px 0 rgba(0,0,0,0.2)
-  }
-  
-.carousel .carousel-inner .carousel-slide img {
-    max-width: 225px;
-    max-height: 125px;
+    box-shadow: 0 0 16px 0 rgba(0,0,0,0.2);
+    opacity: 1;
 }
+  
+.carousel .carousel-inner .carousel-slide .img-number {
+    position: absolute;
+    color: white;
+    font-size: 32px;
+    left: 10%;
+}
+
 
 @media (min-width: 768px) {
     .carousel .carousel-inner .carousel-slide {
@@ -90,30 +94,12 @@ html, body {
     }
 }
 
-.arrow-prev {
-    position: absolute;
-    transform: rotate(180deg);
-    top: 36%;
-    left: -0.5%;
-    cursor: pointer;
-}
-
-.arrow-next {
-    position: absolute;
-    top: 36%;
-    right: -0.5%;
-    cursor: pointer;
-}
-
-.disabled-arrow {
-    cursor: no-drop;
-    opacity: 0.5;
-}
-
-
 @media (max-width: 767.99px) {
     .container-fluid {
         padding: 0 !important;
+    }
+    .carousel {
+        padding: 0;
     }
     .carousel-header {
         margin: 0;
@@ -122,24 +108,56 @@ html, body {
     .carousel-header h1 {
         font-size: 2.5rem;
     }
-    .carousel .carousel-inner .carousel-slide {
-        padding: 0;
-    }
-    .carousel .carousel-inner .carousel-slide img {
-        max-width: 23em;
-        max-height: 16em;
-    }
     .carousel .carousel-inner .carousel-slide h4 {
-        text-align: left;
         padding: 0 1em;
+    }
+    .carousel .carousel-inner .carousel-slide {
+        padding: 2em 0;
     }
     .carousel .carousel-inner .carousel-slide.active {
         box-shadow: none;
     }
     .arrow-prev {
-        left: 7.5%
+        position: absolute;
+        transform: rotate(180deg);
+        left: 1.5%;
+        top: 30%;
+        width: 1.8em;
+        cursor: pointer;
     }
     .arrow-next {
-        right: 7.5%
+        position: absolute;
+        right: 1.5%;
+        top: 30%;
+        width: 1.8em;
+        cursor: pointer;
     }
+    .arrow-next:active, .arrow-prev:active {
+        opacity: 0.5
+    }
+    .arrow-prev-bg, .arrow-next-bg {
+        background: rgba(234,238,231,0.7);
+        width: 14%;
+        border-bottom-right-radius: 100px;
+        border-top-right-radius: 100px;
+        height: 24%;
+        position: absolute;
+        top: 24%;
+    }
+
+    .arrow-prev-bg:active:not(.disabled-arrow), .arrow-next-bg:active:not(.disabled-arrow) {
+        opacity: 0.4;
+    }
+
+    .arrow-next-bg {
+        border-radius: 0;
+        border-bottom-left-radius: 100px;
+        border-top-left-radius: 100px;
+        right: 0;
+    }
+    .disabled-arrow img {
+        cursor: no-drop;
+        opacity: 0.5;
+    }
+
 }
