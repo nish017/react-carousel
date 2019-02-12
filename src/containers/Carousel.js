@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Slide from '../components/Slide'
 import Arrow from '../../public/img/arrow.svg'
+import IndicatorBar from './IndicatorBar'
 
 //class based react component
 class Carousel extends Component {
@@ -10,6 +11,7 @@ class Carousel extends Component {
             active: 0
         }
     }
+
 
     // fn to move to prev slide
     showPrevSlide = (e) => {
@@ -27,6 +29,20 @@ class Carousel extends Component {
             active: this.state.active + 1
         })
         e.stopPropagation();
+    }
+
+    slideToView = (index, slidePerView) => {
+        let curr = Math.floor(this.state.active/slidePerView)
+        if(curr <= index) {
+            return this.setState({
+                active: this.state.active + (index-curr)*slidePerView
+            })
+        } else {
+            return this.setState({
+                active: this.state.active - (curr-index)*slidePerView
+            })
+        }
+        
     }
 
     render() {
@@ -54,6 +70,8 @@ class Carousel extends Component {
                     </span> 
                 </div>
                 <div className="carousel-footer d-none d-md-block">
+                    <IndicatorBar views={this.props.views} active={this.state.active} data={this.props.data}
+                    slideToView={this.slideToView} />
                     <div className="row justify-content-center footer">
                         <button disabled={this.state.active == 0 ? 'disabled' : ''} 
                                 className="btn prev" onClick={this.showPrevSlide}>Prev</button>

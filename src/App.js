@@ -9,7 +9,8 @@ class App extends Component{
     constructor(props) {
         super(props);
         this.state = {
-            carouselData : []
+            carouselData : [],
+            views : 1
         };
     }
 
@@ -19,7 +20,8 @@ class App extends Component{
         .then((data) => {
             console.log(data.hits)
             return this.setState({
-                carouselData: data.hits
+                carouselData: data.hits,
+                views: data.hits.length / 5
             })
         })
     }
@@ -30,7 +32,7 @@ class App extends Component{
           <div>
             <div className="container-fluid">
                 <Header />
-                <Carousel data={this.state.carouselData} />
+                <Carousel data={this.state.carouselData} views={this.state.views} />
             </div>
           </div>
         );

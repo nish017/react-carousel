@@ -161,3 +161,17 @@ html, body {
     }
 
 }
+
+.indicator {
+    flex: 0 1 auto;
+    width: 30px;
+    height: 4px;
+    margin-top: 10px;
+    cursor: pointer;
+    background-color: white;
+    margin: 10px 3px 0
+}
+
+.indicator.selected {
+    background-color: black;
+}

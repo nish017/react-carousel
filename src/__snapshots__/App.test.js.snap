@@ -32,6 +32,9 @@ exports[`<Carousel /> renders correctly 1`] = `
   >
     <div
       className="row justify-content-center footer"
+    />
+    <div
+      className="row justify-content-center footer"
     >
       <button
         className="btn prev"
@@ -60,6 +63,19 @@ exports[`<Header /> renders correctly 1`] = `
     Carousel Test
   </h1>
 </div>
+`;
+
+exports[`<IndicatorBar /> renders correctly 1`] = `
+<div
+  className="row justify-content-center footer"
+/>
+`;
+
+exports[`<Indicators /> renders correctly 1`] = `
+<div
+  className="indicator "
+  onClick={[Function]}
+/>
 `;
 
 exports[`<Slide /> renders correctly 1`] = `
